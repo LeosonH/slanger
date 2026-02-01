@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slanger - Generational Slang Translator</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Slanger</h1>
+            <p class="subtitle">Translate text into generational slang</p>
+        </header>
+
+        <div class="api-key-banner" id="api-key-section">
+            <div class="api-key-content">
+                <div class="api-key-left">
+                    <label for="api-key-input">OpenAI API Key</label>
+                    <span class="api-key-status" id="api-key-status"></span>
+                </div>
+                <div class="api-key-input-group">
+                    <input
+                        type="password"
+                        id="api-key-input"
+                        placeholder="sk-..."
+                        autocomplete="off"
+                    />
+                    <button type="button" id="toggle-key" class="toggle-btn" title="Show/Hide API Key">
+                        👁️
+                    </button>
+                    <button type="button" id="save-key-btn" class="save-key-btn">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <div class="workspace">
+                <div class="input-column">
+                    <div class="input-section">
+                        <label for="input-text">Input</label>
+                        <textarea
+                            id="input-text"
+                            placeholder="Type something here..."
+                            rows="12"
+                        ></textarea>
+                    </div>
+
+                    <div class="generation-selector">
+                        <label>Generation</label>
+                        <div class="generation-buttons">
+                            <button class="gen-btn active" data-gen="boomer">
+                                Boomer
+                            </button>
+                            <button class="gen-btn" data-gen="millennial">
+                                Millennial
+                            </button>
+                            <button class="gen-btn" data-gen="genz">
+                                Gen Z
+                            </button>
+                            <button class="gen-btn" data-gen="genalpha">
+                                Gen Alpha
+                            </button>
+                        </div>
+                    </div>
+
+                    <button id="translate-btn" class="translate-btn">
+                        Translate
+                    </button>
+                </div>
+
+                <div class="output-column">
+                    <div class="output-section">
+                        <label>Output</label>
+                        <div id="output-text" class="output-box">
+                            Your translation will appear here...
+                        </div>
+                    </div>
+
+                    <div class="loading" id="loading">
+                        <div class="spinner"></div>
+                        <p>Translating...</p>
+                    </div>
+
+                    <div class="error" id="error"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p><a href="https://github.com/LeosonH/slanger" target="_blank">View on GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #fff;
+    min-height: 100vh;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: white;
+    color: #333;
+    padding: 24px 40px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+header h1 {
+    font-size: 1.5em;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.api-key-banner {
+    background: #fafafa;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 16px 40px;
+}
+
+.api-key-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.api-key-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 200px;
+}
+
+main {
+    flex: 1;
+    padding: 40px;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.workspace {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    height: 100%;
+}
+
+.input-column,
+.output-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.api-key-input-group {
+    display: flex;
+    gap: 8px;
+    flex: 1;
+}
+
+.api-key-left label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #666;
+    margin: 0;
+}
+
+.api-key-status {
+    font-size: 12px;
+    font-weight: 500;
+    color: #999;
+}
+
+.api-key-status.saved {
+    color: #2e7d32;
+}
+
+.api-key-status.not-saved {
+    color: #c62828;
+}
+
+#api-key-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #d0d0d0;
+    font-size: 13px;
+    font-family: 'Courier New', monospace;
+    background: white;
+}
+
+#api-key-input:focus {
+    outline: none;
+    border-color: #333;
+}
+
+.toggle-btn {
+    padding: 8px 16px;
+    border: 1px solid #d0d0d0;
+    background: white;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.toggle-btn:hover {
+    background: #f5f5f5;
+}
+
+.save-key-btn {
+    padding: 8px 20px;
+    border: 1px solid #333;
+    background: #333;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.save-key-btn:hover {
+    background: #000;
+    border-color: #000;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #888;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-section,
+.output-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+textarea {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    font-size: 15px;
+    font-family: inherit;
+    resize: none;
+    line-height: 1.6;
+    flex: 1;
+    min-height: 300px;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #333;
+    background: #fafafa;
+}
+
+.generation-selector {
+    flex-shrink: 0;
+}
+
+.generation-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.gen-btn {
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    background: white;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.gen-btn:hover {
+    border-color: #333;
+}
+
+.gen-btn.active {
+    background: #333;
+    color: white;
+    border-color: #333;
+}
+
+.translate-btn {
+    width: 100%;
+    padding: 12px;
+    background: #333;
+    color: white;
+    border: 1px solid #333;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.translate-btn:hover {
+    background: #000;
+    border-color: #000;
+}
+
+.translate-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.output-box {
+    width: 100%;
+    padding: 16px;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    white-space: pre-wrap;
+    flex: 1;
+    min-height: 300px;
+    overflow-y: auto;
+}
+
+.output-box.has-content {
+    background: white;
+    color: #000;
+}
+
+.slang-highlight {
+    background: #fff3cd;
+    padding: 2px 4px;
+    border-bottom: 2px solid #ffc107;
+    font-weight: 500;
+}
+
+.loading {
+    display: none;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.loading.show {
+    display: block;
+}
+
+.spinner {
+    border: 2px solid #e0e0e0;
+    border-top: 2px solid #333;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error {
+    display: none;
+    background: #fafafa;
+    border: 1px solid #d0d0d0;
+    color: #333;
+    padding: 12px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.error.show {
+    display: block;
+}
+
+footer {
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    padding: 20px 40px;
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+}
+
+footer a {
+    color: #666;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #333;
+}
+
+@media (max-width: 1024px) {
+    .workspace {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .output-column {
+        order: 2;
+    }
+
+    textarea,
+    .output-box {
+        min-height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px 24px;
+    }
+
+    .api-key-banner {
+        padding: 16px 24px;
+    }
+
+    .api-key-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .api-key-left {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    main {
+        padding: 24px;
+    }
+
+    .workspace {
+        gap: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 16px 20px;
+    }
+
+    header h1 {
+        font-size: 1.3em;
+    }
+
+    .api-key-banner {
+        padding: 12px 20px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .api-key-input-group {
+        flex-wrap: wrap;
+    }
+
+    #api-key-input {
+        width: 100%;
+        order: 1;
+    }
+
+    .toggle-btn,
+    .save-key-btn {
+        flex: 1;
+    }
+
+    textarea,
+    .output-box {
+        min-height: 250px;
+    }
+}
