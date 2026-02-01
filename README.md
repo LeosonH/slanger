@@ -2,6 +2,18 @@
 
 A web app that translates normal language into generational slang (Boomer, Millennial, Gen Z, and Gen Alpha).
 
+## Features
+
+- Clean, modern two-column UI
+- Real-time translation using OpenAI GPT-4.1
+- **Slang highlighting** - generation-specific terms automatically highlighted
+- In-app API key management (session-only storage)
+- Support for 4 generations:
+  - Baby Boomers
+  - Millennials
+  - Gen Z
+  - Gen Alpha
+
 ## Setup
 
 1. **Run the app**
@@ -50,7 +62,7 @@ A web app that translates normal language into generational slang (Boomer, Mille
 
 ## Cost
 
-This app uses OpenAI's GPT-4 API, which costs approximately $0.03 per 1K input tokens and $0.06 per 1K output tokens. Each translation typically costs less than $0.01.
+This app uses OpenAI's GPT-4.1 API, which costs approximately $2.00 per 1M input tokens and $8.00 per 1M output tokens. Each translation typically costs less than $0.01.
 
 ## Security Note
 
